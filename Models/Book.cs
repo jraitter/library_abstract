@@ -1,3 +1,4 @@
+using System;
 using library_abstract.Interfaces;
 
 namespace library_abstract.Models
@@ -9,6 +10,8 @@ namespace library_abstract.Models
     public Book(string title, bool checkedOut, PubType pubType, string author) : base(title, checkedOut, pubType)
     {
       Author = author;
+      string UUID = Guid.NewGuid().ToString();
+      UPC = UUID;
     }
 
 

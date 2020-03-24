@@ -6,11 +6,13 @@ namespace library_abstract.Models
 {
   class Store
   {
+    //properties
     public string Address { get; set; }
     public List<ICheckoutable> Checkouts { get; set; }
     public List<Magazine> Magazines { get; set; }
     public List<Newspaper> NewsPapers { get; set; }
 
+    //helper methods
     public void AddMag(Magazine newMag)
     {
       Magazines.Add(newMag);
@@ -36,8 +38,13 @@ namespace library_abstract.Models
         ICheckoutable item = Checkouts[i];
         if (item is Book)
         {
-          Book book = (Book)item;
-          Console.WriteLine($"{i + 1}. Type={book.PubType}: {book.Title} -- {book.Author} \n");
+          Book book = (Book)item;//explicit type casting (force after checking w/ is)
+          Console.WriteLine($"{i + 1}. Type={book.PubType}: {book.Title} -- {book.Author} ");
+        }
+        Magazine newMag = item as Magazine;//implicit type casting, try and check for null
+        if (newMag != null)
+        {
+          Console.WriteLine($"{i + 1}. Type={newMag.PubType}: {newMag.Title} -- {newMag.Volume} ");
         }
       }
     }
