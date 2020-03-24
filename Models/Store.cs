@@ -33,6 +33,7 @@ namespace library_abstract.Models
 
     public void PrintAvailableItems()
     {
+      Console.WriteLine("Items that can be checked out: ");
       for (int i = 0; i < Checkouts.Count; i++)
       {
         ICheckoutable item = Checkouts[i];
@@ -46,6 +47,15 @@ namespace library_abstract.Models
         {
           Console.WriteLine($"{i + 1}. Type={newMag.PubType}: {newMag.Title} -- {newMag.Volume} ");
         }
+      }
+    }//end of printavailabeitems
+    public void PrintViewOnly()
+    {
+      Console.WriteLine("Items that can be viewed only: ");
+
+      for (int i = 0; i < NewsPapers.Count; i++)
+      {
+        Console.WriteLine($"{i + 1}. Type={NewsPapers[i].PubType}: {NewsPapers[i].Title} -- {NewsPapers[i].City} -- {NewsPapers[i].DayOfWeek} ");
       }
     }
 

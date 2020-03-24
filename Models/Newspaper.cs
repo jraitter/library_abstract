@@ -9,9 +9,5 @@ namespace library_abstract.Models
       City = city;
       DayOfWeek = dayOfWeek;
     }
-
-
-
-
-  }
+  }//end of class
 }//end of namespace

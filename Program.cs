@@ -10,7 +10,9 @@ namespace library_abstract
     static void Main(string[] args)
     {
       Console.WriteLine("Hello World!");
+      //create store
       Store nampa = new Store("123 Maint St.");
+      //add magazines
       nampa.AddItem(new Magazine("Arizona Highways", false, PubType.magazine, "AZ. Magazine", "Original"));
       Magazine vol1 = new Magazine("Arizona Highways", false, PubType.magazine, "AZ. Magazine", "Volume1968.1");
       Magazine vol2 = new Magazine("Arizona Highways", false, PubType.magazine, "AZ. Magazine", "Volume1968.2");
@@ -29,6 +31,7 @@ namespace library_abstract
         vol1,vol2,vol3,vol4,vol5,vol6,vol7,vol8,vol9,vol10,vol11,vol12
       };
       nampa.AddItem(azHiways);//using method overriding passing list
+      //add books
       nampa.AddItem(new Book("Where The Sidewalk Ends", false, PubType.book, "Shel Silverstein"));
       Book sw4 = new Book("Star Wars: A New Hope", false, PubType.book, "Ryder Windham");
       Book sw5 = new Book("Star Wars: Empire Strikes Back", false, PubType.book, "Ryder Windham");
@@ -38,8 +41,15 @@ namespace library_abstract
         sw4,sw5,sw6
       };
       nampa.AddItem(swSagabooks);//using method overriding passing list
-
+      //add newspaper
+      nampa.AddPaper(new Newspaper("MistakesMan", false, PubType.newspaper, "Boise", "Monday"));
+      nampa.AddPaper(new Newspaper("MistakesMan", false, PubType.newspaper, "Boise", "Tuesday"));
       nampa.PrintAvailableItems();
-    }
-  }
-}
+      nampa.PrintViewOnly();
+
+
+
+
+    }//end of Main
+  }//end of program class
+}//end of namespace
